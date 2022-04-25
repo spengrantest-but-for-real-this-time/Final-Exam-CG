@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{D9DE78AF-4594-F1A4-CE88-EB7B3A3DE8A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Layers">
+      <UniqueIdentifier>{782739CD-640B-FA22-CD6B-F475B96EE4A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Layers\PostProcessing">
+      <UniqueIdentifier>{6AC3840D-D631-DA8C-1F1B-958C8BC8CF28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Windows">
+      <UniqueIdentifier>{135200D5-7FB3-DDE2-0821-2495748114A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay">
+      <UniqueIdentifier>{D5936B32-C160-C63D-EA79-B4E5D6A5FBCB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Components">
+      <UniqueIdentifier>{CA49D3CF-36AB-B0DD-BF18-F78F2B79E79C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Components\GUI">
+      <UniqueIdentifier>{DE1DB2B8-4A55-FA4F-535F-5E73BF152149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Physics">
+      <UniqueIdentifier>{479C8837-3395-A789-5CC7-8C0E481F8795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Physics\Colliders">
+      <UniqueIdentifier>{D7CBE2E4-C3DB-8EB5-2C95-F3D318C47D4E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{1653CE33-0220-293F-2B39-17E717655ECD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Buffers">
+      <UniqueIdentifier>{92C817CE-7EC1-3620-A7F3-1BA5934B162C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Textures">
+      <UniqueIdentifier>{A9FD1089-1514-0F1F-5E8B-9A40CAE0DFA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{F68B420E-62A0-6ABF-2B22-0E1F97F566F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ResourceManager">
+      <UniqueIdentifier>{08A13A9D-740D-F697-3D01-8EF5A92C1800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Windows">
+      <UniqueIdentifier>{30CC3F37-9C8C-BB6D-65C7-04EBD146004A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Application\Application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\ApplicationLayer.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\IEditorWindow.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\DefaultSceneLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\GLAppLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\ImGuiDebugLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\InstancedRenderingTestLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\InterfaceLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\LogicUpdateLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\ParticleLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\PostProcessing\BoxFilter3x3.h">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\PostProcessing\BoxFilter5x5.h">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\PostProcessing\ColorCorrectionEffect.h">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\PostProcessing\DepthOfField.h">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\PostProcessing\OutlineEffect.h">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\PostProcessingLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Layers\RenderLayer.h">
+      <Filter>Application\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Timing.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\DebugWindow.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\GBufferPreviews.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\HierarchyWindow.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\InspectorWindow.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\MaterialsWindow.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\PostProcessingSettingsWindow.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application\Windows\TextureWindow.h">
+      <Filter>Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\Camera.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\ComponentManager.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\GUI\GuiPanel.h">
+      <Filter>Gameplay\Components\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\GUI\GuiText.h">
+      <Filter>Gameplay\Components\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\GUI\RectTransform.h">
+      <Filter>Gameplay\Components\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\IComponent.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\JumpBehaviour.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\Light.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\MaterialSwapBehaviour.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\ParticleSystem.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\RenderComponent.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\RotatingBehaviour.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\ShadowCamera.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\ShipMoveBehaviour.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\SimpleCameraControl.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Components\TriggerVolumeEnterBehaviour.h">
+      <Filter>Gameplay\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\InputEngine.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Material.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\MeshResource.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\BulletDebugDraw.h">
+      <Filter>Gameplay\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\BoxCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\CapsuleCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\ConeCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\ConvexMeshCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\CylinderCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\PlaneCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\Colliders\SphereCollider.h">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\ICollider.h">
+      <Filter>Gameplay\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\PhysicsBase.h">
+      <Filter>Gameplay\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\RigidBody.h">
+      <Filter>Gameplay\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Physics\TriggerVolume.h">
+      <Filter>Gameplay\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Scene.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Buffers\IBuffer.h">
+      <Filter>Graphics\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Buffers\IndexBuffer.h">
+      <Filter>Graphics\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Buffers\UniformBuffer.h">
+      <Filter>Graphics\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Buffers\VertexBuffer.h">
+      <Filter>Graphics\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\DebugDraw.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Font.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Framebuffer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\GlEnums.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\GuiBatcher.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\IGraphicsResource.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\RasterizerState.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Renderbuffer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\ShaderProgram.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Textures\ITexture.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Textures\Texture1D.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Textures\Texture2D.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Textures\Texture2DArray.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Textures\Texture3D.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Textures\TextureCube.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\VertexArrayObject.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\VertexParamMap.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\VertexTypes.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Base64.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\FileHelpers.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\GUID.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\GlmBulletConversions.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\GlmDefines.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\ImGuiHelper.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\JsonGlmHelpers.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Macros.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\MeshBuilder.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\MeshFactory.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\ObjLoader.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\OptimizedObjLoader.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\ResourceManager\IResource.h">
+      <Filter>Utils\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\ResourceManager\ResourceManager.h">
+      <Filter>Utils\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\StringUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\TypeHelpers.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Windows\FileDialogs.h">
+      <Filter>Utils\Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Application\Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\DefaultSceneLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\GLAppLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\ImGuiDebugLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\InstancedRenderingTestLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\InterfaceLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\LogicUpdateLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\ParticleLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\PostProcessing\BoxFilter3x3.cpp">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\PostProcessing\BoxFilter5x5.cpp">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\PostProcessing\ColorCorrectionEffect.cpp">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\PostProcessing\DepthOfField.cpp">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\PostProcessing\OutlineEffect.cpp">
+      <Filter>Application\Layers\PostProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\PostProcessingLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Layers\RenderLayer.cpp">
+      <Filter>Application\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\DebugWindow.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\GBufferPreviews.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\HierarchyWindow.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\InspectorWindow.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\MaterialsWindow.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\PostProcessingSettingsWindow.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application\Windows\TextureWindow.cpp">
+      <Filter>Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\Camera.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\GUI\GuiPanel.cpp">
+      <Filter>Gameplay\Components\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\GUI\GuiText.cpp">
+      <Filter>Gameplay\Components\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\GUI\RectTransform.cpp">
+      <Filter>Gameplay\Components\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\IComponent.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\JumpBehaviour.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\Light.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\MaterialSwapBehaviour.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\ParticleSystem.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\RenderComponent.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\RotatingBehaviour.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\ShadowCamera.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\ShipMoveBehaviour.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\SimpleCameraControl.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Components\TriggerVolumeEnterBehaviour.cpp">
+      <Filter>Gameplay\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\InputEngine.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Material.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\MeshResource.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\BulletDebugDraw.cpp">
+      <Filter>Gameplay\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\BoxCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\CapsuleCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\ConeCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\ConvexMeshCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\CylinderCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\PlaneCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\Colliders\SphereCollider.cpp">
+      <Filter>Gameplay\Physics\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\ICollider.cpp">
+      <Filter>Gameplay\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\PhysicsBase.cpp">
+      <Filter>Gameplay\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\RigidBody.cpp">
+      <Filter>Gameplay\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Physics\TriggerVolume.cpp">
+      <Filter>Gameplay\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Scene.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Buffers\IBuffer.cpp">
+      <Filter>Graphics\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Buffers\UniformBuffer.cpp">
+      <Filter>Graphics\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\DebugDraw.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Font.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Framebuffer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GuiBatcher.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\IGraphicsResource.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Renderbuffer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\ShaderProgram.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Textures\ITexture.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Textures\Texture1D.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Textures\Texture2D.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Textures\Texture2DArray.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Textures\Texture3D.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Textures\TextureCube.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\VertexArrayObject.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\VertexTypes.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Base64.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\FileHelpers.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\GUID.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\GlmDefines.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\ImGuiHelper.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\MeshFactory.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\OptimizedObjLoader.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\ResourceManager\ResourceManager.cpp">
+      <Filter>Utils\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\StringUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Windows\FileDialogs.cpp">
+      <Filter>Utils\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entry_point.cpp" />
+  </ItemGroup>
+</Project>

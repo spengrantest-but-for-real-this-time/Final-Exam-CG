@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9E742795-0A35-A3CB-D36F-EC483FEFE7A7}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Final-Exam-CG</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\bin\Debug-windows-x86_64\Final-Exam-CG\</OutDir>
+    <IntDir>..\..\obj\Debug-windows-x86_64\Final-Exam-CG\</IntDir>
+    <TargetName>Final-Exam-CG</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\Release-windows-x86_64\Final-Exam-CG\</OutDir>
+    <IntDir>..\..\obj\Release-windows-x86_64\Final-Exam-CG\</IntDir>
+    <TargetName>Final-Exam-CG</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;..\..\dependencies\glfw3\include;..\..\dependencies\glad\include;..\..\dependencies\imgui;..\..\dependencies\GLM\include;..\..\dependencies\stbs;..\..\dependencies\fmod\include;..\..\dependencies\spdlog\include;..\..\dependencies\entt;..\..\dependencies\cereal;..\..\dependencies\gzip;..\..\dependencies\tinyGLTF;..\..\dependencies\json;..\..\dependencies\bullet3\include;..\..\modules\NOU\include;..\..\modules\sampleModule\include;..\..\modules\toolkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;imagehlp.lib;..\..\dependencies\gzip\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>(xcopy /Q /E /Y /I /C "$(SolutionDir)shared_assets\dll" "$(SolutionDir)bin\Debug-windows-x86_64\$(ProjectName)")
+(xcopy /Q /E /Y /I /C "$(SolutionDir)dependencies\dll" "$(SolutionDir)bin\Debug-windows-x86_64\$(ProjectName)")
+(IF NOT EXIST "$(ProjectDir)res" mkdir "$(ProjectDir)res")
+(xcopy /Q /E /Y /I /C "$(SolutionDir)shared_assets\res" "$(SolutionDir)bin\Debug-windows-x86_64\$(ProjectName)")
+(xcopy /Q /E /Y /I /C "$(ProjectDir)res" "$(SolutionDir)bin\Debug-windows-x86_64\$(ProjectName)")</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;..\..\dependencies\glfw3\include;..\..\dependencies\glad\include;..\..\dependencies\imgui;..\..\dependencies\GLM\include;..\..\dependencies\stbs;..\..\dependencies\fmod\include;..\..\dependencies\spdlog\include;..\..\dependencies\entt;..\..\dependencies\cereal;..\..\dependencies\gzip;..\..\dependencies\tinyGLTF;..\..\dependencies\json;..\..\dependencies\bullet3\include;..\..\modules\NOU\include;..\..\modules\sampleModule\include;..\..\modules\toolkit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;imagehlp.lib;..\..\dependencies\gzip\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>(xcopy /Q /E /Y /I /C "$(SolutionDir)shared_assets\dll" "$(SolutionDir)bin\Release-windows-x86_64\$(ProjectName)")
+(xcopy /Q /E /Y /I /C "$(SolutionDir)dependencies\dll" "$(SolutionDir)bin\Release-windows-x86_64\$(ProjectName)")
+(IF NOT EXIST "$(ProjectDir)res" mkdir "$(ProjectDir)res")
+(xcopy /Q /E /Y /I /C "$(SolutionDir)shared_assets\res" "$(SolutionDir)bin\Release-windows-x86_64\$(ProjectName)")
+(xcopy /Q /E /Y /I /C "$(ProjectDir)res" "$(SolutionDir)bin\Release-windows-x86_64\$(ProjectName)")</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Application\Application.h" />
+    <ClInclude Include="src\Application\ApplicationLayer.h" />
+    <ClInclude Include="src\Application\IEditorWindow.h" />
+    <ClInclude Include="src\Application\Layers\DefaultSceneLayer.h" />
+    <ClInclude Include="src\Application\Layers\GLAppLayer.h" />
+    <ClInclude Include="src\Application\Layers\ImGuiDebugLayer.h" />
+    <ClInclude Include="src\Application\Layers\InstancedRenderingTestLayer.h" />
+    <ClInclude Include="src\Application\Layers\InterfaceLayer.h" />
+    <ClInclude Include="src\Application\Layers\LogicUpdateLayer.h" />
+    <ClInclude Include="src\Application\Layers\ParticleLayer.h" />
+    <ClInclude Include="src\Application\Layers\PostProcessing\BoxFilter3x3.h" />
+    <ClInclude Include="src\Application\Layers\PostProcessing\BoxFilter5x5.h" />
+    <ClInclude Include="src\Application\Layers\PostProcessing\ColorCorrectionEffect.h" />
+    <ClInclude Include="src\Application\Layers\PostProcessing\DepthOfField.h" />
+    <ClInclude Include="src\Application\Layers\PostProcessing\OutlineEffect.h" />
+    <ClInclude Include="src\Application\Layers\PostProcessingLayer.h" />
+    <ClInclude Include="src\Application\Layers\RenderLayer.h" />
+    <ClInclude Include="src\Application\Timing.h" />
+    <ClInclude Include="src\Application\Windows\DebugWindow.h" />
+    <ClInclude Include="src\Application\Windows\GBufferPreviews.h" />
+    <ClInclude Include="src\Application\Windows\HierarchyWindow.h" />
+    <ClInclude Include="src\Application\Windows\InspectorWindow.h" />
+    <ClInclude Include="src\Application\Windows\MaterialsWindow.h" />
+    <ClInclude Include="src\Application\Windows\PostProcessingSettingsWindow.h" />
+    <ClInclude Include="src\Application\Windows\TextureWindow.h" />
+    <ClInclude Include="src\Gameplay\Components\Camera.h" />
+    <ClInclude Include="src\Gameplay\Components\ComponentManager.h" />
+    <ClInclude Include="src\Gameplay\Components\GUI\GuiPanel.h" />
+    <ClInclude Include="src\Gameplay\Components\GUI\GuiText.h" />
+    <ClInclude Include="src\Gameplay\Components\GUI\RectTransform.h" />
+    <ClInclude Include="src\Gameplay\Components\IComponent.h" />
+    <ClInclude Include="src\Gameplay\Components\JumpBehaviour.h" />
+    <ClInclude Include="src\Gameplay\Components\Light.h" />
+    <ClInclude Include="src\Gameplay\Components\MaterialSwapBehaviour.h" />
+    <ClInclude Include="src\Gameplay\Components\ParticleSystem.h" />
+    <ClInclude Include="src\Gameplay\Components\RenderComponent.h" />
+    <ClInclude Include="src\Gameplay\Components\RotatingBehaviour.h" />
+    <ClInclude Include="src\Gameplay\Components\ShadowCamera.h" />
+    <ClInclude Include="src\Gameplay\Components\ShipMoveBehaviour.h" />
+    <ClInclude Include="src\Gameplay\Components\SimpleCameraControl.h" />
+    <ClInclude Include="src\Gameplay\Components\TriggerVolumeEnterBehaviour.h" />
+    <ClInclude Include="src\Gameplay\GameObject.h" />
+    <ClInclude Include="src\Gameplay\InputEngine.h" />
+    <ClInclude Include="src\Gameplay\Material.h" />
+    <ClInclude Include="src\Gameplay\MeshResource.h" />
+    <ClInclude Include="src\Gameplay\Physics\BulletDebugDraw.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\BoxCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\CapsuleCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\ConeCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\ConvexMeshCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\CylinderCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\PlaneCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\Colliders\SphereCollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\ICollider.h" />
+    <ClInclude Include="src\Gameplay\Physics\PhysicsBase.h" />
+    <ClInclude Include="src\Gameplay\Physics\RigidBody.h" />
+    <ClInclude Include="src\Gameplay\Physics\TriggerVolume.h" />
+    <ClInclude Include="src\Gameplay\Scene.h" />
+    <ClInclude Include="src\Graphics\Buffers\IBuffer.h" />
+    <ClInclude Include="src\Graphics\Buffers\IndexBuffer.h" />
+    <ClInclude Include="src\Graphics\Buffers\UniformBuffer.h" />
+    <ClInclude Include="src\Graphics\Buffers\VertexBuffer.h" />
+    <ClInclude Include="src\Graphics\DebugDraw.h" />
+    <ClInclude Include="src\Graphics\Font.h" />
+    <ClInclude Include="src\Graphics\Framebuffer.h" />
+    <ClInclude Include="src\Graphics\GlEnums.h" />
+    <ClInclude Include="src\Graphics\GuiBatcher.h" />
+    <ClInclude Include="src\Graphics\IGraphicsResource.h" />
+    <ClInclude Include="src\Graphics\RasterizerState.h" />
+    <ClInclude Include="src\Graphics\Renderbuffer.h" />
+    <ClInclude Include="src\Graphics\ShaderProgram.h" />
+    <ClInclude Include="src\Graphics\Textures\ITexture.h" />
+    <ClInclude Include="src\Graphics\Textures\Texture1D.h" />
+    <ClInclude Include="src\Graphics\Textures\Texture2D.h" />
+    <ClInclude Include="src\Graphics\Textures\Texture2DArray.h" />
+    <ClInclude Include="src\Graphics\Textures\Texture3D.h" />
+    <ClInclude Include="src\Graphics\Textures\TextureCube.h" />
+    <ClInclude Include="src\Graphics\VertexArrayObject.h" />
+    <ClInclude Include="src\Graphics\VertexParamMap.h" />
+    <ClInclude Include="src\Graphics\VertexTypes.h" />
+    <ClInclude Include="src\Utils\Base64.h" />
+    <ClInclude Include="src\Utils\FileHelpers.h" />
+    <ClInclude Include="src\Utils\GUID.hpp" />
+    <ClInclude Include="src\Utils\GlmBulletConversions.h" />
+    <ClInclude Include="src\Utils\GlmDefines.h" />
+    <ClInclude Include="src\Utils\ImGuiHelper.h" />
+    <ClInclude Include="src\Utils\JsonGlmHelpers.h" />
+    <ClInclude Include="src\Utils\Macros.h" />
+    <ClInclude Include="src\Utils\MeshBuilder.h" />
+    <ClInclude Include="src\Utils\MeshFactory.h" />
+    <ClInclude Include="src\Utils\ObjLoader.h" />
+    <ClInclude Include="src\Utils\OptimizedObjLoader.h" />
+    <ClInclude Include="src\Utils\ResourceManager\IResource.h" />
+    <ClInclude Include="src\Utils\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="src\Utils\StringUtils.h" />
+    <ClInclude Include="src\Utils\TypeHelpers.h" />
+    <ClInclude Include="src\Utils\Windows\FileDialogs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Application\Application.cpp" />
+    <ClCompile Include="src\Application\Layers\DefaultSceneLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\GLAppLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\ImGuiDebugLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\InstancedRenderingTestLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\InterfaceLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\LogicUpdateLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\ParticleLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\PostProcessing\BoxFilter3x3.cpp" />
+    <ClCompile Include="src\Application\Layers\PostProcessing\BoxFilter5x5.cpp" />
+    <ClCompile Include="src\Application\Layers\PostProcessing\ColorCorrectionEffect.cpp" />
+    <ClCompile Include="src\Application\Layers\PostProcessing\DepthOfField.cpp" />
+    <ClCompile Include="src\Application\Layers\PostProcessing\OutlineEffect.cpp" />
+    <ClCompile Include="src\Application\Layers\PostProcessingLayer.cpp" />
+    <ClCompile Include="src\Application\Layers\RenderLayer.cpp" />
+    <ClCompile Include="src\Application\Windows\DebugWindow.cpp" />
+    <ClCompile Include="src\Application\Windows\GBufferPreviews.cpp" />
+    <ClCompile Include="src\Application\Windows\HierarchyWindow.cpp" />
+    <ClCompile Include="src\Application\Windows\InspectorWindow.cpp" />
+    <ClCompile Include="src\Application\Windows\MaterialsWindow.cpp" />
+    <ClCompile Include="src\Application\Windows\PostProcessingSettingsWindow.cpp" />
+    <ClCompile Include="src\Application\Windows\TextureWindow.cpp" />
+    <ClCompile Include="src\Gameplay\Components\Camera.cpp" />
+    <ClCompile Include="src\Gameplay\Components\GUI\GuiPanel.cpp" />
+    <ClCompile Include="src\Gameplay\Components\GUI\GuiText.cpp" />
+    <ClCompile Include="src\Gameplay\Components\GUI\RectTransform.cpp" />
+    <ClCompile Include="src\Gameplay\Components\IComponent.cpp" />
+    <ClCompile Include="src\Gameplay\Components\JumpBehaviour.cpp" />
+    <ClCompile Include="src\Gameplay\Components\Light.cpp" />
+    <ClCompile Include="src\Gameplay\Components\MaterialSwapBehaviour.cpp" />
+    <ClCompile Include="src\Gameplay\Components\ParticleSystem.cpp" />
+    <ClCompile Include="src\Gameplay\Components\RenderComponent.cpp" />
+    <ClCompile Include="src\Gameplay\Components\RotatingBehaviour.cpp" />
+    <ClCompile Include="src\Gameplay\Components\ShadowCamera.cpp" />
+    <ClCompile Include="src\Gameplay\Components\ShipMoveBehaviour.cpp" />
+    <ClCompile Include="src\Gameplay\Components\SimpleCameraControl.cpp" />
+    <ClCompile Include="src\Gameplay\Components\TriggerVolumeEnterBehaviour.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject.cpp" />
+    <ClCompile Include="src\Gameplay\InputEngine.cpp" />
+    <ClCompile Include="src\Gameplay\Material.cpp" />
+    <ClCompile Include="src\Gameplay\MeshResource.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\BulletDebugDraw.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\BoxCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\CapsuleCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\ConeCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\ConvexMeshCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\CylinderCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\PlaneCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\Colliders\SphereCollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\ICollider.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\PhysicsBase.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\RigidBody.cpp" />
+    <ClCompile Include="src\Gameplay\Physics\TriggerVolume.cpp" />
+    <ClCompile Include="src\Gameplay\Scene.cpp" />
+    <ClCompile Include="src\Graphics\Buffers\IBuffer.cpp" />
+    <ClCompile Include="src\Graphics\Buffers\UniformBuffer.cpp" />
+    <ClCompile Include="src\Graphics\DebugDraw.cpp" />
+    <ClCompile Include="src\Graphics\Font.cpp" />
+    <ClCompile Include="src\Graphics\Framebuffer.cpp" />
+    <ClCompile Include="src\Graphics\GuiBatcher.cpp" />
+    <ClCompile Include="src\Graphics\IGraphicsResource.cpp" />
+    <ClCompile Include="src\Graphics\Renderbuffer.cpp" />
+    <ClCompile Include="src\Graphics\ShaderProgram.cpp" />
+    <ClCompile Include="src\Graphics\Textures\ITexture.cpp" />
+    <ClCompile Include="src\Graphics\Textures\Texture1D.cpp" />
+    <ClCompile Include="src\Graphics\Textures\Texture2D.cpp" />
+    <ClCompile Include="src\Graphics\Textures\Texture2DArray.cpp" />
+    <ClCompile Include="src\Graphics\Textures\Texture3D.cpp" />
+    <ClCompile Include="src\Graphics\Textures\TextureCube.cpp" />
+    <ClCompile Include="src\Graphics\VertexArrayObject.cpp" />
+    <ClCompile Include="src\Graphics\VertexTypes.cpp" />
+    <ClCompile Include="src\Utils\Base64.cpp" />
+    <ClCompile Include="src\Utils\FileHelpers.cpp" />
+    <ClCompile Include="src\Utils\GUID.cpp" />
+    <ClCompile Include="src\Utils\GlmDefines.cpp" />
+    <ClCompile Include="src\Utils\ImGuiHelper.cpp" />
+    <ClCompile Include="src\Utils\MeshFactory.cpp" />
+    <ClCompile Include="src\Utils\OptimizedObjLoader.cpp" />
+    <ClCompile Include="src\Utils\ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="src\Utils\StringUtils.cpp" />
+    <ClCompile Include="src\Utils\Windows\FileDialogs.cpp" />
+    <ClCompile Include="src\entry_point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\dependencies\glfw3\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dependencies\glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dependencies\stbs\Stbs.vcxproj">
+      <Project>{818D8C7C-6DC4-8D0D-16B1-731002C7090F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dependencies\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dependencies\tinyGLTF\TinyGLTF.vcxproj">
+      <Project>{76563D9D-6223-98A8-8B3C-86507768CD36}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modules\NOU\NOU.vcxproj">
+      <Project>{3709880B-A312-887C-2C8E-9E7C9896937C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modules\sampleModule\sampleModule.vcxproj">
+      <Project>{8D153653-7978-C5F7-22FE-FDAD0E40917A}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modules\toolkit\toolkit.vcxproj">
+      <Project>{AB7025F0-1750-A48B-2068-2F628CC60AED}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
