@@ -14,10 +14,47 @@ uniform layout(binding = 4) sampler2D s_Emissive;
 #include "../fragments/multiple_point_lights.glsl"
 
 void main() {
-    vec3 albedo = texture(s_Albedo, inUV).rgb;
-    vec3 diffuse = texture(s_DiffuseAccumulation, inUV).rgb;
-    vec3 specular = texture(s_SpecularAccumulation, inUV).rgb;
+    vec3 albedo = vec3(0);
+    vec3 diffuse = vec3(0);
+    vec3 specular = vec3(0);
+    vec4 emissive = vec4(0);
+
+    outColor = vec4(0);
+
+
+    if (IsFlagSet(FLAG_ENABLE_ALBEDO)) {
+
+    albedo = texture(s_Albedo, inUV).rgb;
+
+
+    }
+
+    if (IsFlagSet(FLAG_ENABLE_DIFFUSE)) {
+
+    diffuse = texture(s_DiffuseAccumulation, inUV).rgb;
+
+
+    }
+
+
+
+        if (IsFlagSet(FLAG_ENABLE_SPECULAR)) {
+
+    specular = texture(s_SpecularAccumulation, inUV).rgb;
+
+
+    }
+
+
+    if (IsFlagSet(FLAG_ENABLE_EMISSIVE)) {
+
     vec4 emissive = texture(s_Emissive, inUV);
+
+
+    }
+
+
+
 
 	outColor = vec4(albedo * (diffuse + specular + (emissive.rgb * emissive.a)), 1.0);
 }
