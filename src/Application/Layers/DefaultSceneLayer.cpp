@@ -141,6 +141,7 @@ void DefaultSceneLayer::_CreateScene()
 		MeshResource::Sptr monkeyMesh = ResourceManager::CreateAsset<MeshResource>("Monkey.obj");
 		MeshResource::Sptr shipMesh   = ResourceManager::CreateAsset<MeshResource>("fenrir.obj");
 		MeshResource::Sptr megaMesh = ResourceManager::CreateAsset<MeshResource>("Megaman.obj");
+		MeshResource::Sptr snakeMesh = ResourceManager::CreateAsset<MeshResource>("Snake.obj");
 
 		// Load in some textures
 		Texture2D::Sptr    boxTexture   = ResourceManager::CreateAsset<Texture2D>("textures/box-diffuse.png");
@@ -148,6 +149,7 @@ void DefaultSceneLayer::_CreateScene()
 		Texture2D::Sptr    monkeyTex    = ResourceManager::CreateAsset<Texture2D>("textures/monkey-uvMap.png");
 		Texture2D::Sptr    leafTex      = ResourceManager::CreateAsset<Texture2D>("textures/leaves.png");
 		Texture2D::Sptr    megaTex		= ResourceManager::CreateAsset<Texture2D>("textures/MegaManUV.png");
+		Texture2D::Sptr    snakeTex = ResourceManager::CreateAsset<Texture2D>("textures/SnakeUV.png");
 		leafTex->SetMinFilter(MinFilter::Nearest);
 		leafTex->SetMagFilter(MagFilter::Nearest);
 
@@ -229,6 +231,7 @@ void DefaultSceneLayer::_CreateScene()
 			monkeyMaterial->Set("u_Material.Shininess", 0.5f);
 		}
 
+		//Mega Man
 		// This will be the reflective material, we'll make the whole thing 90% reflective
 		Material::Sptr megaMaterial = ResourceManager::CreateAsset<Material>(deferredForward);
 		{
@@ -238,7 +241,15 @@ void DefaultSceneLayer::_CreateScene()
 			megaMaterial->Set("u_Material.Shininess", 0.5f);
 		}
 
-
+		//Snake
+		// This will be the reflective material, we'll make the whole thing 90% reflective
+		Material::Sptr snakeMaterial = ResourceManager::CreateAsset<Material>(deferredForward);
+		{
+			snakeMaterial->Name = "MegaTex";
+			snakeMaterial->Set("u_Material.AlbedoMap", snakeTex);
+			snakeMaterial->Set("u_Material.NormalMap", normalMapDefault);
+			snakeMaterial->Set("u_Material.Shininess", 0.5f);
+		}
 
 		// This will be the reflective material, we'll make the whole thing 50% reflective
 		Material::Sptr testMaterial = ResourceManager::CreateAsset<Material>(deferredForward); 
@@ -398,7 +409,7 @@ void DefaultSceneLayer::_CreateScene()
 		}
 
 		   
-
+		//Mega Man
 		GameObject::Sptr megaman = scene->CreateGameObject("MegaMan");
 		{
 			// Set position in the scene
@@ -420,7 +431,29 @@ void DefaultSceneLayer::_CreateScene()
 			megaman->Add<TriggerVolumeEnterBehaviour>();
 		}
 
+		//snake
+		GameObject::Sptr snake = scene->CreateGameObject("Snake");
+		{
+			// Set position in the scene
+			snake->SetPostion(glm::vec3(0.f, 0.0f, 5.0f));
+			snake->SetRotation(glm::vec3(90.f, 0.0f, 90.0f));
+			snake->SetScale(glm::vec3(3.f, 4.0f, 4.0f));
 
+			// Add some behaviour that relies on the physics body
+			snake->Add<JumpBehaviour>();
+
+			// Create and attach a renderer for the monkey
+			RenderComponent::Sptr renderer = snake->Add<RenderComponent>();
+			renderer->SetMesh(snakeMesh);
+			renderer->SetMaterial(snakeMaterial);
+
+			// Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies
+			TriggerVolume::Sptr trigger = snake->Add<TriggerVolume>();
+			trigger->SetFlags(TriggerTypeFlags::Statics | TriggerTypeFlags::Kinematics);
+			trigger->AddCollider(BoxCollider::Create(glm::vec3(1.0f)));
+
+			snake->Add<TriggerVolumeEnterBehaviour>();
+		}
 
 
 
