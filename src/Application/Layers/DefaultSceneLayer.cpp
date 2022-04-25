@@ -140,12 +140,14 @@ void DefaultSceneLayer::_CreateScene()
 		// Load in the meshes
 		MeshResource::Sptr monkeyMesh = ResourceManager::CreateAsset<MeshResource>("Monkey.obj");
 		MeshResource::Sptr shipMesh   = ResourceManager::CreateAsset<MeshResource>("fenrir.obj");
+		MeshResource::Sptr megaMesh = ResourceManager::CreateAsset<MeshResource>("Megaman.obj");
 
 		// Load in some textures
 		Texture2D::Sptr    boxTexture   = ResourceManager::CreateAsset<Texture2D>("textures/box-diffuse.png");
 		Texture2D::Sptr    boxSpec      = ResourceManager::CreateAsset<Texture2D>("textures/box-specular.png");
 		Texture2D::Sptr    monkeyTex    = ResourceManager::CreateAsset<Texture2D>("textures/monkey-uvMap.png");
 		Texture2D::Sptr    leafTex      = ResourceManager::CreateAsset<Texture2D>("textures/leaves.png");
+		Texture2D::Sptr    megaTex		= ResourceManager::CreateAsset<Texture2D>("textures/MegaManUV.png");
 		leafTex->SetMinFilter(MinFilter::Nearest);
 		leafTex->SetMagFilter(MagFilter::Nearest);
 
@@ -226,6 +228,17 @@ void DefaultSceneLayer::_CreateScene()
 			monkeyMaterial->Set("u_Material.NormalMap", normalMapDefault);
 			monkeyMaterial->Set("u_Material.Shininess", 0.5f);
 		}
+
+		// This will be the reflective material, we'll make the whole thing 90% reflective
+		Material::Sptr megaMaterial = ResourceManager::CreateAsset<Material>(deferredForward);
+		{
+			megaMaterial->Name = "MegaTex";
+			megaMaterial->Set("u_Material.AlbedoMap", megaTex);
+			megaMaterial->Set("u_Material.NormalMap", normalMapDefault);
+			megaMaterial->Set("u_Material.Shininess", 0.5f);
+		}
+
+
 
 		// This will be the reflective material, we'll make the whole thing 50% reflective
 		Material::Sptr testMaterial = ResourceManager::CreateAsset<Material>(deferredForward); 
@@ -354,17 +367,17 @@ void DefaultSceneLayer::_CreateScene()
 		// Set up the scene's camera
 		GameObject::Sptr camera = scene->MainCamera->GetGameObject()->SelfRef();
 		{
-			camera->SetPostion({ 0, 10, 5 });
+			camera->SetPostion({ 0, 2, 6 });   
 			camera->LookAt({0, 0, 5});
 
 			camera->Add<SimpleCameraControl>();
 
-			// This is now handled by scene itself!
+			// This is now handled by scene itself!    
 			//Camera::Sptr cam = camera->Add<Camera>();
 			// Make sure that the camera is set as the scene's main camera!
 			//scene->MainCamera = cam;
-		}
-
+		}   
+		         
 
 		// Set up all our sample objects
 		GameObject::Sptr plane = scene->CreateGameObject("Plane");
@@ -383,6 +396,34 @@ void DefaultSceneLayer::_CreateScene()
 			RigidBody::Sptr physics = plane->Add<RigidBody>(/*static by default*/);
 			physics->AddCollider(BoxCollider::Create(glm::vec3(50.0f, 50.0f, 1.0f)))->SetPosition({ 0,0,-1 });
 		}
+
+		   
+
+		GameObject::Sptr megaman = scene->CreateGameObject("MegaMan");
+		{
+			// Set position in the scene
+			megaman->SetPostion(glm::vec3(0.0f, 0.0f, 5.0f));
+		
+			// Add some behaviour that relies on the physics body
+			megaman->Add<JumpBehaviour>();
+		
+			// Create and attach a renderer for the monkey
+			RenderComponent::Sptr renderer = megaman->Add<RenderComponent>();
+			renderer->SetMesh(megaMesh);
+			renderer->SetMaterial(megaMaterial);
+		
+			// Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies
+			TriggerVolume::Sptr trigger = megaman->Add<TriggerVolume>();
+			trigger->SetFlags(TriggerTypeFlags::Statics | TriggerTypeFlags::Kinematics);
+			trigger->AddCollider(BoxCollider::Create(glm::vec3(1.0f)));
+		
+			megaman->Add<TriggerVolumeEnterBehaviour>();
+		}
+
+
+
+
+
 
 		// Add some walls :3
 		//{
